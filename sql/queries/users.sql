@@ -17,3 +17,10 @@ WHERE
 
 -- name: Reset :exec
 TRUNCATE TABLE users;
+
+-- name: GetUsers :many
+SELECT
+    *
+FROM users
+ORDER BY
+    name;
