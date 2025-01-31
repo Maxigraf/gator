@@ -33,13 +33,7 @@ func main() {
 		Config:   &cfg,
 	}
 
-	commands := command.Commands{}
-	commands.Register("login", command.HandlerLogin)
-	commands.Register("register", command.HandlerRegister)
-	commands.Register("reset", command.HandlerReset)
-	commands.Register("users", command.HandlerUsers)
-	commands.Register("agg", command.HandlerAggregate)
-	commands.Register("addfeed", command.HandlerAddFeed)
+	commands := command.NewCommands()
 
 	args := os.Args
 
