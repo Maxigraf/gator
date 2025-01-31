@@ -6,10 +6,6 @@ import (
 )
 
 func handlerLogin(s *State, cmd Command) error {
-	if len(cmd.Args) == 0 {
-		return fmt.Errorf("missing arguments")
-	}
-
 	user, err := s.Database.GetUser(context.Background(), cmd.Args[0])
 
 	if err != nil {

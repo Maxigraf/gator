@@ -10,10 +10,6 @@ import (
 )
 
 func handlerAddFeed(s *State, cmd Command, user database.User) error {
-	if len(cmd.Args) < 2 {
-		return fmt.Errorf("missing arguments")
-	}
-
 	params := database.CreateFeedParams{
 		ID:        uuid.New(),
 		CreatedAt: time.Now(),

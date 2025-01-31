@@ -10,10 +10,6 @@ import (
 )
 
 func handlerFollow(s *State, cmd Command, user database.User) error {
-	if len(cmd.Args) == 0 {
-		return fmt.Errorf("missing arguments")
-	}
-
 	feed, err := s.Database.GetFeedByUrl(context.Background(), cmd.Args[0])
 
 	if err != nil {

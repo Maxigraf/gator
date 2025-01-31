@@ -10,10 +10,6 @@ import (
 )
 
 func handlerRegister(s *State, cmd Command) error {
-	if len(cmd.Args) == 0 {
-		return fmt.Errorf("missing arguments")
-	}
-
 	params := database.CreateUserParams{
 		ID:        uuid.New(),
 		CreatedAt: time.Now(),
