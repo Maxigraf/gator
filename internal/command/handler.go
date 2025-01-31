@@ -8,4 +8,6 @@ func registerHandlers(commands Commands) {
 	commands.Register("agg", handlerAggregate)
 	commands.Register("addfeed", handlerAddFeed)
 	commands.Register("feeds", handlerFeeds)
+	commands.Register("follow", handlerFollow)
+	commands.Register("following", handlerFollowing)
 }

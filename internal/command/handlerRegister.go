@@ -29,7 +29,7 @@ func handlerRegister(s *State, cmd Command) error {
 
 	s.Config.SetUser(user.Name)
 
-	fmt.Printf("User '%s' created: %v\n", cmd.Args[0], user)
+	fmt.Printf("User '%s' created: %+v\n", cmd.Args[0], user)
 
 	return nil
 }

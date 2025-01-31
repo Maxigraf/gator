@@ -37,5 +37,11 @@ func handlerAddFeed(s *State, cmd Command) error {
 
 	fmt.Printf("Feed '%s' created: %+v\n", feed.Name, feed)
 
+	_, err = addFeedFollow(s, user, feed)
+
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

@@ -21,7 +21,7 @@ func handlerFeeds(s *State, cmd Command) error {
 			return fmt.Errorf("could not get user: %v", err)
 		}
 
-		fmt.Printf(" * Feed '%s' [%s] added by %s\n", feed.Name, feed.Url, user.Name)
+		fmt.Printf("* Feed '%s' [%s] added by %s\n", feed.Name, feed.Url, user.Name)
 	}
 
 	return nil
