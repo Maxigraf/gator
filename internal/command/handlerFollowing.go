@@ -3,15 +3,11 @@ package command
 import (
 	"context"
 	"fmt"
+
+	"github.com/maxigraf/gator/internal/database"
 )
 
-func handlerFollowing(s *State, cmd Command) error {
-	user, err := s.Database.GetUser(context.Background(), s.Config.CurrentUserName)
-
-	if err != nil {
-		return fmt.Errorf("not logged in or user doesn't exist: %v", err)
-	}
-
+func handlerFollowing(s *State, cmd Command, user database.User) error {
 	feedFollows, err := s.Database.GetFeedFollowsForUser(context.Background(), user.ID)
 
 	if err != nil {

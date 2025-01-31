@@ -9,15 +9,9 @@ import (
 	"github.com/maxigraf/gator/internal/database"
 )
 
-func handlerAddFeed(s *State, cmd Command) error {
+func handlerAddFeed(s *State, cmd Command, user database.User) error {
 	if len(cmd.Args) < 2 {
 		return fmt.Errorf("missing arguments")
-	}
-
-	user, err := s.Database.GetUser(context.Background(), s.Config.CurrentUserName)
-
-	if err != nil {
-		return fmt.Errorf("not logged in or user doesn't exist: %v", err)
 	}
 
 	params := database.CreateFeedParams{

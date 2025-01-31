@@ -6,8 +6,8 @@ func registerHandlers(commands Commands) {
 	commands.Register("reset", handlerReset)
 	commands.Register("users", handlerUsers)
 	commands.Register("agg", handlerAggregate)
-	commands.Register("addfeed", handlerAddFeed)
+	commands.Register("addfeed", middlewareLoggedIn(handlerAddFeed))
 	commands.Register("feeds", handlerFeeds)
-	commands.Register("follow", handlerFollow)
-	commands.Register("following", handlerFollowing)
+	commands.Register("follow", middlewareLoggedIn(handlerFollow))
+	commands.Register("following", middlewareLoggedIn(handlerFollowing))
 }
